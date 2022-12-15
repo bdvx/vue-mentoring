@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module
       .rule('file-loader')
       .test(/\.(gif|png|jpe?g|svg)$/i)
@@ -18,15 +18,15 @@ module.exports = defineConfig({
         },
         pngquant: {
           quality: [0.65, 0.90],
-          speed: 4
+          speed: 4,
         },
         gifsicle: {
           interlaced: false,
         },
         // the webp option will enable WEBP
         webp: {
-          quality: 75
-        }
+          quality: 75,
+        },
       });
-  }
+  },
 });

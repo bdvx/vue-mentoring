@@ -20,7 +20,7 @@ export default {
     },
     size: {
       type: String,
-      validator: function (value) {
+      validator(value) {
         return ['small', 'medium', 'large'].indexOf(value) !== -1;
       },
     },
@@ -36,17 +36,14 @@ export default {
     return {
       classes: computed(() => ({
         'storybook-button': true,
-        'storybook-button--primary': props.primary,
-        'storybook-button--secondary': !props.primary,
-        [`storybook-button--${props.size || 'medium'}`]: true,
       })),
       style: computed(() => ({
         backgroundColor: props.backgroundColor,
       })),
       onClick() {
         emit('click');
-      }
-    }
+      },
+    };
   },
 };
 </script>
