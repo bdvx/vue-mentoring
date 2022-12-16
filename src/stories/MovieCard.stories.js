@@ -20,19 +20,19 @@ const Template = (args) => ({
   },
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `<MovieCard
-                :title="Title"
-                :genre="Genre"
-                :year="2004"
-                :image="reservoir.jpg"
-                :key="title"
-                :description="description"
-                :length="150"
+                title="Title"
+                genre="Genre"
+                year="2004"
+                image="reservoir.jpg"
+                key="title"
+                description="description"
+                length="150"
             />`,
 });
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-    primary: true,
-    label: 'MovieCard',
+  primary: true,
+  label: 'MovieCard',
 };
