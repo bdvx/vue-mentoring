@@ -2,10 +2,15 @@
   <div class="container">
     <p class="find-movie">Find your movie</p>
     <SearchBar />
-    <p class="search-by">Search by <Toggle :options="sortOptions" ></Toggle></p>
+    <div class="search-by"><span class="search-by-title">Search by</span>
+      <Toggle :firstOption="title" :secondOption="genre" toggleName="search"/>
+    </div>
     <div class="sort-wrapper">
-          <div class="sort">Sort by genre</div>
-        </div>
+      <div class="sort">
+        <span class="sort-by-genre">Sort by genre</span>
+        <Toggle :firstOption="date" :secondOption="rating" toggleName="sort"/>
+      </div>
+    </div>
     <MovieList />
   </div>
 </template>
@@ -21,10 +26,10 @@ export default defineComponent({
   components: { SearchBar, MovieList, Toggle },
   data() {
     return {
-      sortOptions: [
-        { value: 'title', name: ' By Title' },
-        { value: 'body', name: ' By Body' },
-      ],
+      title: 'TITLE',
+      genre: 'GENRE',
+      date: 'RELEASE DATE',
+      rating: 'RATING',
     };
   },
   props: {
@@ -65,17 +70,32 @@ a {
 }
 .search-by{
   color: white;
+  display: flex;
+  align-items: baseline;
+}
+.search-by-title{
+  text-transform: uppercase;
+  margin: 30px 15px 0 380px;
+  font-weight: 300;
 }
 .sort-wrapper{
   height: 100px;
   background-color: #555555;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .sort{
   margin-right: 300px;
   color: white;
   font-size: 20px;
+  display: flex;
+  margin-top: 35px;
+  align-items: baseline;
+}
+.sort-by-genre{
+  text-transform: uppercase;
+  margin-right: 30px;
+  font-weight: 300;
 }
 </style>

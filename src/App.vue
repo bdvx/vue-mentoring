@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <span class="netflix-roulette netflix-roulette-top" @click="$router.push('/')">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
@@ -11,11 +11,11 @@
     </span>
     <RouterView>
     </RouterView>
-</div>
-<span class="netflix-roulette netflix-roulette-bottom">
+    <span class="netflix-roulette netflix-roulette-bottom">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
     </span>
+</div>
 </template>
 
 <script lang="ts">
@@ -69,10 +69,10 @@ export default defineComponent({
 
 .netflix-roulette-bottom{
   background-color: #555555;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
-  width: 95%;
+  width: 100%;
   padding: 20px 0;
 }
 .netflix{
@@ -87,5 +87,9 @@ export default defineComponent({
   position: absolute;
   right: 0;
   margin-right: 25px;
+}
+.container{
+  position: relative;
+  padding-bottom: 35px;
 }
 </style>

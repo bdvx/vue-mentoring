@@ -1,21 +1,25 @@
 <template lang="">
-    <div class="switch-field">
-        <input type="radio" id="radio-one" name="switch-one" value="yes" checked/>
-        <label for="radio-one">{{first}}</label>
-        <input type="radio" id="radio-two" name="switch-one" value="no" />
-        <label for="radio-two">{{second}}</label>
-    </div>
+    <span class="switch-field">
+        <input type="radio" :id="firstOption" :name="toggleName" value="yes" checked/>
+        <label class="toggle-label" :for="firstOption">{{firstOption}}</label>
+        <input type="radio" :id="secondOption" :name="toggleName" value="no" />
+        <label class="toggle-label" :for="secondOption">{{secondOption}}</label>
+    </span>
 </template>
 
 <script>
 export default {
   name: 'Toggle',
   props: {
-    first: {
+    firstOption: {
       type: String,
       default: '',
     },
-    second: {
+    secondOption: {
+      type: String,
+      default: '',
+    },
+    toggleName: {
       type: String,
       default: '',
     },
@@ -38,9 +42,10 @@ export default {
 }
 
 .switch-field label {
-	background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
+	background: rgba(66,66,66, 0.8);
 	font-size: 14px;
+    font-weight: 300;
+    color:white;
 	line-height: 1;
 	text-align: center;
 	padding: 8px 16px;
