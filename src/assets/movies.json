@@ -6,7 +6,9 @@
         "year": "2004",
         "director": "Quentin Tarantino",
         "mark": "4.2",
-        "image": "killbill2.jpg"
+        "image": "killbill2.jpg",
+        "length": "100",
+        "description":"The Bride continues her quest of vengeance against her former boss and lover Bill, the reclusive bouncer Budd, and the treacherous, one-eyed Elle."
     },
     {
         "title": "Kill Bill: Vol 1",
@@ -14,7 +16,9 @@
         "year": "2003",
         "director": "Quentin Tarantino",
         "mark": "4.3",
-        "image": "killbill1.jpg"
+        "image": "killbill1.jpg",
+        "length": "150",
+        "description":"After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her."
     },
     {
         "title": "Pulp Fiction",
@@ -22,7 +26,9 @@
         "year": "2004",
         "director": "Quentin Tarantino",
         "mark": "4.6",
-        "image": "pulpfiction.jpg"
+        "image": "pulpfiction.jpg",
+        "length": "120",
+        "description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
     },
     {
         "title": "Reservoir Dogs",
@@ -30,7 +36,9 @@
         "year": "2004",
         "director": "Quentin Tarantino",
         "mark": "4.8",
-        "image": "reservoir.jpg"
+        "image": "reservoir.jpg",
+        "length": "110",
+        "description":"When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant."
     },
     {
         "title": "Four Rooms",
@@ -38,7 +46,9 @@
         "year": "2000",
         "director": "Quentin Tarantino",
         "mark": "4.1",
-        "image": "fourrooms.jpg"
+        "image": "fourrooms.jpg",
+        "length": "160",
+        "description":"Four interlocking tales that take place in a fading hotel on New Year's Eve."
     },
     {
         "title": "Jackie Brown",
@@ -46,6 +56,8 @@
         "year": "1997",
         "director": "Quentin Tarantino",
         "mark": "4.0",
-        "image": "jackie.jpg"
+        "image": "jackie.jpg",
+        "length": "170",
+        "description":"A flight attendant with a criminal past gets nabbed by the ATF for smuggling. Under pressure to become an informant against the drug dealer she works for, she must find a way to secure her future without getting killed."
     }
 ]

@@ -1,45 +1,31 @@
 <template>
     <div class="movies-container">
         <MovieCard
-        v-for="movie in movies"
-        :title="movie.title"
-        :genre="movie.genre"
-        :year="movie.year"
-        :image="movie.image"
-        :key="movie.title"
+            v-for="movie in $store.state.movies"
+            :title="movie.title"
+            :genre="movie.genre"
+            :year="movie.year"
+            :image="movie.image"
+            :key="movie.title"
+            :description="movie.description"
+            :length="movie.length"
         />
     </div>
   </template>
 
 <script>
 import MovieCard from '@/components/MovieCard/MovieCard.vue';
-import list from '@/assets/movies.json';
 
 export default {
   name: 'MovieList',
   components: { MovieCard },
   data() {
     return {
-      movies: list,
+
     };
   },
-  props: {
-    image: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    year: {
-      type: String,
-      required: true,
-    },
-    genre: {
-      type: String,
-      required: true,
-    },
+  methods: {
+
   },
 };
 </script>

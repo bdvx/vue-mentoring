@@ -55,7 +55,7 @@ export default {
 }
 
 .switch-field input:checked + label {
-	background-color: #a5dc86;
+	background-color: #f65261;
 	box-shadow: none;
 }
 
@@ -65,5 +65,9 @@ export default {
 
 .switch-field label:last-of-type {
 	border-radius: 0 4px 4px 0;
+}
+#radio-one{
+    height: 15px;
+    width: 19px;
 }
 </style>

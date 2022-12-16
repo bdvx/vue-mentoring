@@ -1,6 +1,9 @@
 <template>
-    <div class="movie">
-        <img class="poster" alt="poster" :src="getPic(image)" />
+    <div
+    class="movie"
+    @click="$router.push({name: 'movie',
+     params: {id: title.toLowerCase().replace(/\s/g, '')}})">
+        <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
         <span class="genre">{{genre}}</span>
@@ -11,11 +14,6 @@
 
 export default {
   name: 'MovieCard',
-  methods: {
-    getPic(pic) {
-      return `./${pic}`;
-    },
-  },
   props: {
     image: {
       type: String,
@@ -30,6 +28,14 @@ export default {
       required: true,
     },
     genre: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    length: {
       type: String,
       required: true,
     },
@@ -51,11 +57,11 @@ export default {
 .title{
     display: inline-block;
     text-align: left;
-    width: 60%;
+    width: 39%;
     margin-left: 15px;
 }
 .year{
-    width:15%;
+    width: 9%;
     display: inline-block;
     font-size: 14px;
     border: white 1px solid;
@@ -66,7 +72,7 @@ export default {
     font-size:14px;
     display: inline-block;
     text-align: left;
-    width: 75%;
+    width: 48%;
     margin-bottom: 55px;
 }
 </style>

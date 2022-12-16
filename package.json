@@ -13,7 +13,8 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
@@ -69,7 +70,8 @@
       "vue/no-unused-components": "off",
       "no-tabs": "off",
       "vuejs-accessibility/label-has-for": "off",
-      "vue/multi-word-component-names": "off"
+      "vue/multi-word-component-names": "off",
+      "vuejs-accessibility/click-events-have-key-events": "off"
     },
     "overrides": [
       {

@@ -1,25 +1,40 @@
 <template>
   <div>
-    <span class="netflix-roulette netflix-roulette-top">
+    <span class="netflix-roulette netflix-roulette-top" @click="$router.push('/')">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
+      <span
+      class="return"
+      v-if="$route.name?.includes('movie')">
+        <img class="return-image" alt="return" :src="require('@/assets/search.svg')" />
+      </span>
     </span>
-    <MainPage msg="Welcome to Your Vue.js + TypeScript App"/>
-    <span class="netflix-roulette netflix-roulette-bottom">
-      <span class="netflix">netflix</span>
-      <span class="roulette">roulette</span>
-    </span>
+    <RouterView>
+    </RouterView>
 </div>
+<span class="netflix-roulette netflix-roulette-bottom">
+      <span class="netflix">netflix</span>
+      <span class="roulette">roulette</span>
+    </span>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { mapActions } from 'vuex';
 import MainPage from './pages/Main.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     MainPage,
+  },
+  methods: {
+    ...mapActions({
+      fetchMovies: 'fetchMovies',
+    }),
+  },
+  mounted() {
+    this.fetchMovies();
   },
 });
 </script>
@@ -49,6 +64,7 @@ export default defineComponent({
   display: block;
   margin-left: 65px;
   margin-top: 25px;
+  cursor: pointer;
 }
 
 .netflix-roulette-bottom{
@@ -61,5 +77,15 @@ export default defineComponent({
 }
 .netflix{
   font-weight: 700;
+}
+.return{
+  cursor: pointer;
+  float: right;
+}
+.return-image{
+  width: 30px;
+  position: absolute;
+  right: 0;
+  margin-right: 25px;
 }
 </style>
