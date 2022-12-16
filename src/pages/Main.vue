@@ -65,7 +65,7 @@ a {
   display: block;
   text-transform: uppercase;
   font-size: 38px;
-  margin-left: 105px;
+  margin-left: 20%;
   color: white;
 }
 .search-by{
