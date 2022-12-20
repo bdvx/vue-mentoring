@@ -7,6 +7,7 @@
           :description="selectedMovie.description"
           :length="selectedMovie.length"
           :image="selectedMovie.image"
+          :rating="selectedMovie.rating"
         />
         <div class="genre-wrapper">
           <div class="genre">Films by {{selectedMovie.genre}} genre</div>
@@ -17,15 +18,13 @@
 <script>
 import MovieList from '@/components/MovieList/MovieList.vue';
 import MovieDescription from '@/components/MovieDescription/MovieDescription.vue';
-import { mapState } from 'vuex';
+// import { mapState } from 'vuex';
 
 export default {
   name: 'MovieItem',
   components: { MovieList, MovieDescription },
-  computed: {
-    ...mapState({
-      selectedMovie: (state) => state.selectedMovie,
-    }),
+  props: {
+    selectedMovie: Object,
   },
 };
 </script>

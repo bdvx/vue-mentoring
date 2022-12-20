@@ -1,16 +1,18 @@
 <template>
   <div class="container">
-    <span class="netflix-roulette netflix-roulette-top" @click="$router.push('/')">
+    <span class="netflix-roulette netflix-roulette-top" @click="changeIsDescription(false)">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
       <span
       class="return"
-      v-if="$route.name?.includes('movie')">
+      v-if="isDescription"
+      @click="changeIsDescription(false)"
+      >
         <img class="return-image" alt="return" :src="require('@/assets/search.svg')" />
       </span>
     </span>
-    <RouterView>
-    </RouterView>
+    <MovieItem v-if="isDescription" :selectedMovie="selectedMovie"/>
+    <MainPage v-else :changeIsDescription="changeIsDescription" />
     <span class="netflix-roulette netflix-roulette-bottom">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
@@ -20,21 +22,29 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapActions } from 'vuex';
+// import { mapActions } from 'vuex';
 import MainPage from './pages/Main.vue';
+import MovieItem from './pages/MovieItem.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     MainPage,
+    MovieItem,
+  },
+  data() {
+    return {
+      isDescription: false,
+      selectedMovie: null,
+    };
   },
   methods: {
-    ...mapActions({
-      fetchMovies: 'fetchMovies',
-    }),
-  },
-  mounted() {
-    this.fetchMovies();
+    changeIsDescription(value, selectedMovie) {
+      this.isDescription = value;
+      if (selectedMovie) {
+        this.selectedMovie = selectedMovie;
+      }
+    },
   },
 });
 </script>

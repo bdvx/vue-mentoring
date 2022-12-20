@@ -1,35 +1,26 @@
 <template>
-    <input class="search" v-model="localValue" type="text" v-bind="$attrs" />
-    <MyButton label="SEARCH"></MyButton>
+    <input class="search" :value="value" @input="updateInput($event.target.value)" type="text" />
+    <MyButton label="SEARCH" :onClick="emitInput"></MyButton>
 </template>
 
 <script>
-
-import { computed } from 'vue';
 import MyButton from '../Button/Button.vue';
 
 export default {
   name: 'SearchBar',
   components: { MyButton },
-  props: {
-    modelValue: {
-      type: String,
-      default: '',
-    },
-    label: {
-      type: String,
-      default: '',
-    },
-  },
-  emits: ['update:modelValue'],
-  setup(props, context) {
-    const localValue = computed({
-      get: () => props.modelValue,
-      set: (value) => context.emit('update:modelValue', value),
-    });
+  data() {
     return {
-      localValue,
+      value: '',
     };
+  },
+  methods: {
+    emitInput() {
+      this.$emit('update:input', this.value);
+    },
+    updateInput(value) {
+      this.value = value;
+    },
   },
 };
 </script>

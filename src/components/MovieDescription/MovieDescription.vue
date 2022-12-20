@@ -1,27 +1,26 @@
 <template lang="">
     <div class="description-wrapper">
         <div class="wrapper">
-            <img class="poster" alt="poster" :src="require(`@/assets/reservoir.jpg`)" />
+            <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
         </div>
         <div class="wrapper">
             <div class="title-wrapper">
-                <span class="title">Reservoir Dogs</span>
-                <span class="mark">4.3</span>
+                <span class="title">{{title}}</span>
+                <span class="rating">{{rating}}</span>
              </div>
-            <div class="genre">Oscar Winning Movie</div>
+            <div class="genre">{{genre}}</div>
             <div class="year-length">
                 <span class="year">
-                    <span class="red">2004</span>
+                    <span class="red">{{year}}</span>
                     year
                 </span>
                 <span class="length">
-                    <span class="red">154</span>
+                    <span class="red">{{length}}</span>
                     min
                 </span>
             </div>
             <div class="description">
-                When a simple jewelry heist goes horribly wrong,
-                 the surviving criminals begin to suspect that one of them is a police informant.
+                {{description}}
             </div>
         </div>
     </div>
@@ -54,10 +53,18 @@ export default {
       type: String,
       required: true,
     },
+    rating: {
+      type: String,
+      required: true,
+    },
   },
 };
 </script>
 <style scoped>
+.poster{
+    width: 300px;
+    height: 500px;
+}
 .description-wrapper{
     width:100%;
     text-align: left;
@@ -77,7 +84,7 @@ export default {
 .title-wrapper{
     margin-top: 30px;
 }
-.mark{
+.rating{
     font-size: 32px;
     font-weight: 300;
     border: 1px solid white;

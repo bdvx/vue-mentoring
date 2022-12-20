@@ -4,10 +4,7 @@ import Toggle from '../components/Toggle/Toggle.vue';
 export default {
   title: 'Example/Toggle',
   component: Toggle,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-  argTypes: {
-    onClick: {},
-  },
+
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -22,9 +19,4 @@ const Template = (args) => ({
   template: '<Toggle firstOption="TITLE" secondOption="GENRE" toggleName="search"/>',
 });
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Toggle',
-};
+export const Main = Template.bind({});

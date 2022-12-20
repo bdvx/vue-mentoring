@@ -4,10 +4,6 @@ import SearchBar from '../components/SearchBar/SearchBar.vue';
 export default {
   title: 'Example/SearchBar',
   component: SearchBar,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-  argTypes: {
-    onClick: {},
-  },
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -22,9 +18,5 @@ const Template = (args) => ({
   template: '<SearchBar />',
 });
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'SearchBar',
-};
+export const Main = Template.bind({});
+

@@ -1,17 +1,32 @@
 <template>
   <div class="container">
     <p class="find-movie">Find your movie</p>
-    <SearchBar />
+    <SearchBar :searchQuery="searchQuery" v-model:input="searchQuery" />
     <div class="search-by"><span class="search-by-title">Search by</span>
-      <Toggle :firstOption="title" :secondOption="genre" toggleName="search"/>
+      <Toggle
+        :firstOption="title"
+        :secondOption="genre"
+        v-model:value="searchBy"
+        toggleName="search"
+      />
     </div>
     <div class="sort-wrapper">
       <div class="sort">
         <span class="sort-by-genre">Sort by genre</span>
-        <Toggle :firstOption="date" :secondOption="rating" toggleName="sort"/>
+        <Toggle
+          :firstOption="date"
+          :secondOption="rating"
+          v-model:value="selectedSort"
+          toggleName="sort"
+        />
       </div>
     </div>
-    <MovieList />
+    <MovieList
+    :changeIsDescription="changeIsDescription"
+    :selectedSort="selectedSort"
+    :searchQuery="searchQuery"
+    :searchBy="searchBy"
+     />
   </div>
 </template>
 
@@ -22,7 +37,7 @@ import MovieList from '@/components/MovieList/MovieList.vue';
 import Toggle from '@/components/Toggle/Toggle.vue';
 
 export default defineComponent({
-  name: 'Main',
+  name: 'MainPage',
   components: { SearchBar, MovieList, Toggle },
   data() {
     return {
@@ -30,10 +45,13 @@ export default defineComponent({
       genre: 'GENRE',
       date: 'RELEASE DATE',
       rating: 'RATING',
+      selectedSort: 'release date',
+      searchQuery: '',
+      searchBy: 'TITLE',
     };
   },
   props: {
-    msg: String,
+    changeIsDescription: Function,
   },
 });
 </script>

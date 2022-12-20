@@ -8,17 +8,11 @@
 <script lang="ts">
 export default {
   name: 'my-button',
-
-  methods: {
-    onClick() {
-      /**
-       * Click event
-       *
-       * @event click
-       */
-      this.$emit('click');
+  props: {
+    onClick: {
+      type: Function,
+      required: true,
     },
-  },
 };
 </script>
 

@@ -5,59 +5,65 @@
         "genre": "Action & Adventure",
         "year": "2004",
         "director": "Quentin Tarantino",
-        "mark": "4.2",
+        "rating": "4.2",
         "image": "killbill2.jpg",
         "length": "100",
-        "description":"The Bride continues her quest of vengeance against her former boss and lover Bill, the reclusive bouncer Budd, and the treacherous, one-eyed Elle."
+        "description":"The Bride continues her quest of vengeance against her former boss and lover Bill, the reclusive bouncer Budd, and the treacherous, one-eyed Elle.",
+        "release date": "1.12.2002"
     },
     {
         "title": "Kill Bill: Vol 1",
         "genre": "Action & Adventure",
         "year": "2003",
         "director": "Quentin Tarantino",
-        "mark": "4.3",
+        "rating": "4.3",
         "image": "killbill1.jpg",
         "length": "150",
-        "description":"After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her."
+        "description":"After awakening from a four-year coma, a former assassin wreaks vengeance on the team of assassins who betrayed her.",
+        "release date": "2.12.2002"
     },
     {
         "title": "Pulp Fiction",
         "genre": "Oscar Winning Movie",
         "year": "2004",
         "director": "Quentin Tarantino",
-        "mark": "4.6",
+        "rating": "4.6",
         "image": "pulpfiction.jpg",
         "length": "120",
-        "description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+        "description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "release date": "3.12.2002"
     },
     {
         "title": "Reservoir Dogs",
         "genre": "Oscar Winning Movie",
         "year": "2004",
         "director": "Quentin Tarantino",
-        "mark": "4.8",
+        "rating": "4.8",
         "image": "reservoir.jpg",
         "length": "110",
-        "description":"When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant."
+        "description":"When a simple jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one of them is a police informant.",
+        "release date": "4.12.2002"
     },
     {
         "title": "Four Rooms",
         "genre": "Oscar Winning Movie",
         "year": "2000",
         "director": "Quentin Tarantino",
-        "mark": "4.1",
+        "rating": "4.1",
         "image": "fourrooms.jpg",
         "length": "160",
-        "description":"Four interlocking tales that take place in a fading hotel on New Year's Eve."
+        "description":"Four interlocking tales that take place in a fading hotel on New Year's Eve.",
+        "release date": "5.12.2002"
     },
     {
         "title": "Jackie Brown",
         "genre": "Action & Adventure",
         "year": "1997",
         "director": "Quentin Tarantino",
-        "mark": "4.0",
+        "rating": "4.0",
         "image": "jackie.jpg",
         "length": "170",
-        "description":"A flight attendant with a criminal past gets nabbed by the ATF for smuggling. Under pressure to become an informant against the drug dealer she works for, she must find a way to secure her future without getting killed."
+        "description":"A flight attendant with a criminal past gets nabbed by the ATF for smuggling.",
+        "release date": "6.12.2002"
     }
 ]

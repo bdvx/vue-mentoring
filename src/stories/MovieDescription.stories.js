@@ -4,10 +4,6 @@ import MovieDescription from '../components/MovieDescription/MovieDescription.vu
 export default {
   title: 'Example/MovieDescription',
   component: MovieDescription,
-  // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
-  argTypes: {
-    onClick: {},
-  },
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -22,9 +18,4 @@ const Template = (args) => ({
   template: '<MovieDescription />',
 });
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'MovieDescription',
-};
+export const Main = Template.bind({});

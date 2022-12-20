@@ -1,8 +1,21 @@
 <template lang="">
     <span class="switch-field">
-        <input type="radio" :id="firstOption" :name="toggleName" value="yes" checked/>
+        <input
+          type="radio"
+          :id="firstOption"
+          :name="toggleName"
+          :value="firstOption"
+          @change="$emit('update:value', firstOption)"
+          checked
+        />
         <label class="toggle-label" :for="firstOption">{{firstOption}}</label>
-        <input type="radio" :id="secondOption" :name="toggleName" value="no" />
+        <input
+          type="radio"
+          :id="secondOption"
+          :name="toggleName"
+          :value="secondOption"
+          @change="$emit('update:value', secondOption)"
+        />
         <label class="toggle-label" :for="secondOption">{{secondOption}}</label>
     </span>
 </template>
@@ -20,6 +33,10 @@ export default {
       default: '',
     },
     toggleName: {
+      type: String,
+      default: '',
+    },
+    model: {
       type: String,
       default: '',
     },

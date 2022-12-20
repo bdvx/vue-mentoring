@@ -1,8 +1,7 @@
 <template>
     <div
     class="movie"
-    @click="$router.push({name: 'movie',
-     params: {id: title.toLowerCase().replace(/\s/g, '')}})">
+    @click="changeIsDescription(true, {image, title, year, genre, description, length, rating})">
         <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
@@ -39,6 +38,11 @@ export default {
       type: String,
       required: true,
     },
+    rating: {
+      type: String,
+      required: true,
+    },
+    changeIsDescription: Function,
   },
 };
 </script>
