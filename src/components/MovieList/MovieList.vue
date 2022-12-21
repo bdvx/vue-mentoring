@@ -10,7 +10,7 @@
             :description="movie.description"
             :length="movie.length"
             :rating="movie.rating"
-            :changeIsDescription="changeIsDescription"
+            :onClick="(params) => changeIsDescription(true, params)"
         />
     </div>
     <div class="no-films" v-else>

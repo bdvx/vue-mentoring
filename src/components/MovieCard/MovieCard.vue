@@ -1,7 +1,7 @@
 <template>
     <div
     class="movie"
-    @click="changeIsDescription(true, {image, title, year, genre, description, length, rating})">
+    @click="() => onClick({image, title, year, genre, description, length, rating})">
         <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
@@ -42,7 +42,10 @@ export default {
       type: String,
       required: true,
     },
-    changeIsDescription: Function,
+    onClick: {
+      type: Function,
+      default: () => alert('Card pressed!'),
+    },
   },
 };
 </script>

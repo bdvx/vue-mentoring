@@ -4,8 +4,10 @@ import MyButton from '../components/Button/Button.vue';
 export default {
   title: 'Example/Button',
   component: MyButton,
+  args: {
+    title: "Test"
+  }
 };
-
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
   // Components used in your story `template` are defined in the `components` object
@@ -15,7 +17,5 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<MyButton label="Test" />',
-});
-
+  template: `<MyButton label="${args.title}" />`,});
 export const Main = Template.bind({});

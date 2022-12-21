@@ -15,7 +15,15 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<MovieDescription />',
+  template: `<MovieDescription
+                title="Title"
+                genre="Genre"
+                year="2004"
+                image="reservoir.jpg"
+                key="title"
+                description="description"
+                length="150"
+            />`,
 });
 
 export const Main = Template.bind({});
