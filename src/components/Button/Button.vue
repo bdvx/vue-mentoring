@@ -15,7 +15,7 @@ export default {
     },
     onClick: {
       type: Function,
-      default: () => alert('Clicked!')
+      default: () => alert('Clicked!'),
     },
   },
 };
