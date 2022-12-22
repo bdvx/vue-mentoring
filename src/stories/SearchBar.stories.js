@@ -15,7 +15,7 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<SearchBar />',
+  template: '<SearchBar v-bind="args" />',
 });
 
 export const Main = Template.bind({});

@@ -4,7 +4,11 @@ import Toggle from '../components/Toggle/Toggle.vue';
 export default {
   title: 'Example/Toggle',
   component: Toggle,
-
+    args: {
+        firstOption: "TITLE",
+        secondOption: "GENRE",
+        toggleName: "search",
+    }
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -16,7 +20,7 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Toggle firstOption="TITLE" secondOption="GENRE" toggleName="search"/>',
+  template: '<Toggle v-bind="args" />',
 });
 
 export const Main = Template.bind({});
