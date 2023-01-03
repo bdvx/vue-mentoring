@@ -5,8 +5,8 @@ export default {
   title: 'Example/Button',
   component: MyButton,
   args: {
-    label: "Test"
-  }
+    label: 'Test',
+  },
 };
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
@@ -17,5 +17,6 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<MyButton v-bind="args" />',});
+  template: '<MyButton v-bind="args" />',
+});
 export const Main = Template.bind({});

@@ -5,14 +5,14 @@ export default {
   title: 'Example/MovieCard',
   component: MovieCard,
   args: {
-    title: "Title",
-    genre: "Genre",
-    year: "2004",
-    image: "reservoir.jpg",
-    key: "title",
-    description: "description",
-    length: "150",
-  }
+    title: 'Title',
+    genre: 'Genre',
+    year: '2004',
+    image: 'reservoir.jpg',
+    key: 'title',
+    description: 'description',
+    length: '150',
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -24,8 +24,7 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<MovieCard v-bind="args" />`,
+  template: '<MovieCard v-bind="args" />',
 });
 
 export const Main = Template.bind({});
-

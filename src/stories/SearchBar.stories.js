@@ -19,4 +19,3 @@ const Template = (args) => ({
 });
 
 export const Main = Template.bind({});
-

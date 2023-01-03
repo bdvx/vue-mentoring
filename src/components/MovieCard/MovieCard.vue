@@ -2,7 +2,7 @@
     <div
     class="movie"
     @click="() => onClick({image, title, year, genre, description, length, rating})">
-        <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
+        <ImageItem class="poster" alt="poster" :source="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
         <span class="genre">{{genre}}</span>
@@ -10,9 +10,11 @@
   </template>
 
 <script>
+import ImageItem from '@/components/ImageItem.vue';
 
 export default {
   name: 'MovieCard',
+  components: { ImageItem },
   props: {
     image: {
       type: String,
