@@ -18,13 +18,13 @@
 <script>
 import MovieList from '@/components/MovieList/MovieList.vue';
 import MovieDescription from '@/components/MovieDescription/MovieDescription.vue';
-// import { mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'MovieItem',
   components: { MovieList, MovieDescription },
-  props: {
-    selectedMovie: Object,
+  computed: {
+    ...mapState(['selectedMovie']),
   },
 };
 </script>

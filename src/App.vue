@@ -11,7 +11,7 @@
         <img class="return-image" alt="return" :src="require('@/assets/search.svg')" />
       </span>
     </span>
-    <MovieItem v-if="isDescription" :selectedMovie="selectedMovie"/>
+    <MovieItem v-if="isDescription"/>
     <MainPage v-else :changeIsDescription="changeIsDescription" />
     <span class="netflix-roulette netflix-roulette-bottom">
       <span class="netflix">netflix</span>
@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import { mapActions } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import MainPage from './pages/Main.vue';
 import MovieItem from './pages/MovieItem.vue';
 
@@ -32,17 +32,20 @@ export default defineComponent({
     MainPage,
     MovieItem,
   },
-  data() {
-    return {
-      isDescription: false,
-      selectedMovie: null,
-    };
+  computed: {
+    ...mapState([
+      'isDescription',
+    ]),
   },
   methods: {
+    ...mapMutations({
+      setIsDescription: 'setIsDescription',
+      setSelectedMovie: 'setSelectedMovie',
+    }),
     changeIsDescription(value, selectedMovie) {
-      this.isDescription = value;
+      this.setIsDescription(value);
       if (selectedMovie) {
-        this.selectedMovie = selectedMovie;
+        this.setSelectedMovie(selectedMovie);
       }
     },
   },

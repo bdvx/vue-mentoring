@@ -22,18 +22,27 @@
 
 <script>
 import MovieCard from '@/components/MovieCard/MovieCard.vue';
-import list from '@/assets/movies.json';
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'MovieList',
   components: { MovieCard },
-  data() {
-    return {
-      movies: list,
-    };
-  },
   methods: {
-
+    ...mapActions({
+      fetchMovies: 'fetchMovies',
+    }),
+  },
+  computed: {
+    ...mapState({
+      movies: (state) => state.movies,
+    }),
+    ...mapGetters({
+      sortedMovies: 'sortedMovies',
+      sortedAndSearchedMovies: 'sortedAndSearchedMovies',
+    }),
+  },
+  mounted() {
+    this.fetchMovies();
   },
   props: {
     changeIsDescription: Function,
@@ -48,18 +57,6 @@ export default {
     searchBy: {
       type: String,
       default: 'title',
-    },
-  },
-  computed: {
-    sortedMovies() {
-      return [...this.movies]
-        .sort((movie1, movie2) => movie1[this.selectedSort.toLowerCase()]
-          ?.localeCompare(movie2[this.selectedSort.toLowerCase()]));
-    },
-    sortedAndSearchedMovies() {
-      return this.sortedMovies
-        .filter((movie) => movie[this.searchBy.toLowerCase()]
-          .toLowerCase().includes(this.searchQuery.toLowerCase()));
     },
   },
 };

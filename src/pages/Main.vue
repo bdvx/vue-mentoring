@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <p class="find-movie">Find your movie</p>
-    <SearchBar :searchQuery="searchQuery" v-model:input="searchQuery" />
+    <SearchBar :searchQuery="searchQuery" @update:value="setSearchQuery" />
     <div class="search-by"><span class="search-by-title">Search by</span>
       <Toggle
         :firstOption="title"
@@ -16,7 +16,7 @@
         <Toggle
           :firstOption="date"
           :secondOption="rating"
-          v-model:value="selectedSort"
+          @update:value="setSelectedSort"
           toggleName="sort"
         />
       </div>
@@ -35,6 +35,7 @@ import { defineComponent } from 'vue';
 import SearchBar from '@/components/SearchBar/SearchBar.vue';
 import MovieList from '@/components/MovieList/MovieList.vue';
 import Toggle from '@/components/Toggle/Toggle.vue';
+import { mapState, mapMutations } from 'vuex';
 
 export default defineComponent({
   name: 'MainPage',
@@ -45,10 +46,21 @@ export default defineComponent({
       genre: 'GENRE',
       date: 'RELEASE DATE',
       rating: 'RATING',
-      selectedSort: 'release date',
-      searchQuery: '',
-      searchBy: 'TITLE',
     };
+  },
+  computed: {
+    ...mapState([
+      'selectedSort',
+      'searchQuery',
+      'searchBy',
+    ]),
+  },
+  methods: {
+    ...mapMutations({
+      setSearchBy: 'setSearchBy',
+      setSearchQuery: 'setSearchQuery',
+      setSelectedSort: 'setSelectedSort',
+    }),
   },
   props: {
     changeIsDescription: Function,
