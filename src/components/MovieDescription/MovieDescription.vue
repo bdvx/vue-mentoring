@@ -15,7 +15,7 @@
                     year
                 </span>
                 <span class="length">
-                    <span class="red">{{length}}</span>
+                    <span class="red">{{fixed}}</span>
                     min
                 </span>
             </div>
@@ -28,6 +28,11 @@
 <script>
 export default {
   name: 'MovieDescription',
+  computed: {
+    fixed() {
+      return Math.round(+this.length);
+    },
+  },
   props: {
     image: {
       type: String,
