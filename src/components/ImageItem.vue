@@ -47,7 +47,7 @@ export default {
       justify-content: center;
       align-items: center;
       border-radius: 4px;
-
+      margin-left: 167px;
       &.loaded {
         .image {
           &__item {

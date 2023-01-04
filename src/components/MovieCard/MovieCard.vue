@@ -1,7 +1,7 @@
 <template>
     <div
     class="movie"
-    @click="() => onClick({image, title, year, genre, description, length, rating})">
+    @click="() => changeIsDescription({image, title, year, genre, description, length, rating})">
         <ImageItem class="poster" alt="poster" :source="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
@@ -11,6 +11,7 @@
 
 <script>
 import ImageItem from '@/components/ImageItem.vue';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'MovieCard',
@@ -44,9 +45,17 @@ export default {
       type: String,
       required: true,
     },
-    onClick: {
-      type: Function,
-      default: () => alert('Card pressed!'),
+  },
+  methods: {
+    ...mapMutations({
+      setIsDescription: 'setIsDescription',
+      setSelectedMovie: 'setSelectedMovie',
+    }),
+    changeIsDescription(selectedMovie) {
+      this.setIsDescription(true);
+      if (selectedMovie) {
+        this.setSelectedMovie(selectedMovie);
+      }
     },
   },
 };

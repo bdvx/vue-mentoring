@@ -1,17 +1,17 @@
 <template lang="">
     <div class="description-wrapper">
         <div class="wrapper">
-            <img class="poster" alt="poster" :src="require(`@/assets/${image}`)" />
+            <img class="poster" alt="poster" :src="require(`@/assets/${selectedMovie.image}`)" />
         </div>
         <div class="wrapper">
             <div class="title-wrapper">
-                <span class="title">{{title}}</span>
-                <span class="rating">{{rating}}</span>
+                <span class="title">{{selectedMovie.title}}</span>
+                <span class="rating">{{selectedMovie.rating}}</span>
              </div>
-            <div class="genre">{{genre}}</div>
+            <div class="genre">{{selectedMovie.genre}}</div>
             <div class="year-length">
                 <span class="year">
-                    <span class="red">{{year}}</span>
+                    <span class="red">{{selectedMovie.year}}</span>
                     year
                 </span>
                 <span class="length">
@@ -20,48 +20,23 @@
                 </span>
             </div>
             <div class="description">
-                {{description}}
+                {{selectedMovie.description}}
             </div>
         </div>
     </div>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'MovieDescription',
   computed: {
     fixed() {
-      return Math.round(+this.length);
+      return Math.round(+this.selectedMovie.length);
     },
-  },
-  props: {
-    image: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    year: {
-      type: String,
-      required: true,
-    },
-    genre: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    length: {
-      type: String,
-      required: true,
-    },
-    rating: {
-      type: String,
-      required: true,
-    },
+    ...mapState([
+      'selectedMovie',
+    ]),
   },
 };
 </script>
