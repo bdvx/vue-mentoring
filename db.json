@@ -1,4 +1,4 @@
-[
+{"movies": [
     {
         "title": "Kill Bill: Vol 2",
         "genre": "Action & Adventure",
@@ -65,4 +65,4 @@
         "description":"A flight attendant with a criminal past gets nabbed by the ATF for smuggling.",
         "release date": "6.12.2002"
     }
-]
+]}
