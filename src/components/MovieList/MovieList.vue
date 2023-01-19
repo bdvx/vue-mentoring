@@ -43,21 +43,6 @@ export default {
   mounted() {
     this.fetchMovies();
   },
-  props: {
-    changeIsDescription: Function,
-    selectedSort: {
-      type: String,
-      default: 'release date',
-    },
-    searchQuery: {
-      type: String,
-      default: '',
-    },
-    searchBy: {
-      type: String,
-      default: 'title',
-    },
-  },
 };
 </script>
 <style scoped>
