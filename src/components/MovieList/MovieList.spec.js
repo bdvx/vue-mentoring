@@ -26,14 +26,14 @@ describe('MovieList component tests', () => {
     sortedMovies: () => {},
     sortedAndSearchedMovies: () => params,
   };
-  let store; 
-  const fetchMovies = jest.fn(); 
+  let store;
+  const fetchMovies = jest.fn();
   const state = {
     movies: params,
-  }; 
+  };
   const actions = {
-      fetchMovies,
-    };
+    fetchMovies,
+  };
   it('Should render with selected text', () => {
     store = new Vuex.Store({
       state,
@@ -48,28 +48,28 @@ describe('MovieList component tests', () => {
       },
     });
     params.forEach((p, i) => {
-        expect(wrapper.findAll('.movie .title')[i].text()).toBe(p.title)
-        expect(wrapper.findAll('.movie .year')[i].text()).toBe(p.year)
-        expect(wrapper.findAll('.movie .genre')[i].text()).toBe(p.genre)
-    }); 
+      expect(wrapper.findAll('.movie .title')[i].text()).toBe(p.title);
+      expect(wrapper.findAll('.movie .year')[i].text()).toBe(p.year);
+      expect(wrapper.findAll('.movie .genre')[i].text()).toBe(p.genre);
+    });
   });
   it('Should show text with no films if none presented', () => {
-        let getters = {
-            sortedMovies: () => {},
-            sortedAndSearchedMovies: () => [],
-        }
-        store = new Vuex.Store({
-            state: { movies: [] },
-            actions,
-            getters
-          })
-        wrapper = shallowMount(MovieList, {
-            global: {
-                mocks: {
-                  $store: store
-                }
-              }
-        })
-        expect(wrapper.find('.no-films-text').text()).toBe('No films found')
-    })
+    const getters = {
+      sortedMovies: () => {},
+      sortedAndSearchedMovies: () => [],
+    };
+    store = new Vuex.Store({
+      state: { movies: [] },
+      actions,
+      getters,
+    });
+    wrapper = shallowMount(MovieList, {
+      global: {
+        mocks: {
+          $store: store,
+        },
+      },
+    });
+    expect(wrapper.find('.no-films-text').text()).toBe('No films found');
+  });
 });

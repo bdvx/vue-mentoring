@@ -1,5 +1,5 @@
 import { createStore } from 'vuex';
-import list from '@/assets/movies.json';
+import axios from 'axios';
 
 export default createStore({
   state: {
@@ -45,10 +45,12 @@ export default createStore({
   },
   actions: {
     async fetchMovies({ commit }) {
-      // Can replace with remote data fetching in future
-      const response = list;
-
-      commit('setMovies', response);
+      try {
+        const response = await axios.get('https://my-json-server.typicode.com/bdvx/vue-mentoring/movies');
+        commit('setMovies', response.data);
+      } catch (e) {
+        console.error('Axios movies error response', e);
+      }
     },
   },
 });

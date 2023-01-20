@@ -10,9 +10,12 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "dependencies": {
+    "axios": "^1.2.3",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.1.6",
