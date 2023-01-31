@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "title": "Kill Bill: Vol 2",
         "genre": "Action & Adventure",
         "year": "2004",
@@ -11,6 +12,7 @@
         "release date": "1.12.2002"
     },
     {
+        "id": 2,
         "title": "Kill Bill: Vol 1",
         "genre": "Action & Adventure",
         "year": "2003",
@@ -22,6 +24,7 @@
         "release date": "2.12.2002"
     },
     {
+        "id": 3,
         "title": "Pulp Fiction",
         "genre": "Oscar Winning Movie",
         "year": "2004",
@@ -33,6 +36,7 @@
         "release date": "3.12.2002"
     },
     {
+        "id": 4,
         "title": "Reservoir Dogs",
         "genre": "Oscar Winning Movie",
         "year": "2004",
@@ -44,6 +48,7 @@
         "release date": "4.12.2002"
     },
     {
+        "id": 5,
         "title": "Four Rooms",
         "genre": "Oscar Winning Movie",
         "year": "2000",
@@ -55,6 +60,7 @@
         "release date": "5.12.2002"
     },
     {
+        "id": 6,
         "title": "Jackie Brown",
         "genre": "Action & Adventure",
         "year": "1997",

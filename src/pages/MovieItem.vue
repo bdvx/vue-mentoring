@@ -1,18 +1,11 @@
 <template lang="">
     <div>
-        <MovieDescription
-          :title="selectedMovie.title"
-          :year="selectedMovie.year"
-          :genre="selectedMovie.genre"
-          :description="selectedMovie.description"
-          :length="selectedMovie.length"
-          :image="selectedMovie.image"
-          :rating="selectedMovie.rating"
+        <MovieDescription :movie="movie"
         />
         <div class="genre-wrapper">
-          <div class="genre">Films by {{selectedMovie.genre}} genre</div>
+          <div class="genre">Films by {{movie.genre}} genre</div>
         </div>
-        <MovieList :genre="selectedMovie.genre" />
+        <MovieList :genre="movie.genre" />
     </div>
 </template>
 <script>
@@ -24,7 +17,10 @@ export default {
   name: 'MovieItem',
   components: { MovieList, MovieDescription },
   computed: {
-    ...mapState(['selectedMovie']),
+    ...mapState(['movies']),
+    movie() {
+      return this.movies.filter((m) => m.id === this.$route.params.id);
+    },
   },
 };
 </script>

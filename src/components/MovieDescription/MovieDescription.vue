@@ -1,17 +1,17 @@
 <template lang="">
     <div class="description-wrapper">
         <div class="wrapper">
-            <img class="poster" alt="poster" :src="require(`@/assets/${selectedMovie.image}`)" />
+            <!--<img class="poster" alt="poster" :src="require(`@/assets/${movie.image}`)" /> -->
         </div>
         <div class="wrapper">
             <div class="title-wrapper">
-                <span class="title">{{selectedMovie.title}}</span>
-                <span class="rating">{{selectedMovie.rating}}</span>
+                <span class="title">{{movie.title}}</span>
+                <span class="rating">{{movie.rating}}</span>
              </div>
-            <div class="genre">{{selectedMovie.genre}}</div>
+            <div class="genre">{{movie.genre}}</div>
             <div class="year-length">
                 <span class="year">
-                    <span class="red">{{selectedMovie.year}}</span>
+                    <span class="red">{{movie.year}}</span>
                     year
                 </span>
                 <span class="length">
@@ -20,23 +20,24 @@
                 </span>
             </div>
             <div class="description">
-                {{selectedMovie.description}}
+                {{movie.description}}
             </div>
         </div>
     </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'MovieDescription',
+  props: {
+    movie: {
+      type: Object,
+      required: true,
+    },
+  },
   computed: {
     fixed() {
-      return Math.round(+this.selectedMovie.length);
+      return Math.round(+this.movie.length);
     },
-    ...mapState([
-      'selectedMovie',
-    ]),
   },
 };
 </script>

@@ -4,7 +4,6 @@ import axios from 'axios';
 export default createStore({
   state: {
     movies: [],
-    selectedMovie: {},
     searchQuery: '',
     selectedSort: 'release date',
     searchBy: 'TITLE',
@@ -23,9 +22,6 @@ export default createStore({
     },
   },
   mutations: {
-    setSelectedMovie(state, movie) {
-      state.selectedMovie = movie;
-    },
     setMovies(state, movies) {
       state.movies = movies;
     },

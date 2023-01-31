@@ -1,18 +1,18 @@
 <template>
   <div class="container">
-    <span class="netflix-roulette netflix-roulette-top" @click="changeIsDescription(false)">
+    <span class="netflix-roulette netflix-roulette-top" @click="$router.push('/')">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
       <span
       class="return"
       v-if="isDescription"
-      @click="changeIsDescription(false)"
+      @click="$router.push('/')"
       >
         <img class="return-image" alt="return" :src="require('@/assets/search.svg')" />
       </span>
     </span>
-    <MovieItem v-if="isDescription"/>
-    <MainPage v-else :changeIsDescription="changeIsDescription" />
+    <RouterView>
+    </RouterView>
     <span class="netflix-roulette netflix-roulette-bottom">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapState } from 'vuex';
 import MainPage from './pages/Main.vue';
 import MovieItem from './pages/MovieItem.vue';
 
@@ -36,18 +36,6 @@ export default defineComponent({
     ...mapState([
       'isDescription',
     ]),
-  },
-  methods: {
-    ...mapMutations({
-      setIsDescription: 'setIsDescription',
-      setSelectedMovie: 'setSelectedMovie',
-    }),
-    changeIsDescription(value, selectedMovie) {
-      this.setIsDescription(value);
-      if (selectedMovie) {
-        this.setSelectedMovie(selectedMovie);
-      }
-    },
   },
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div
     class="movie"
-    @click="() => changeIsDescription({image, title, year, genre, description, length, rating})">
+    @click="$router.push(`/movie/${id}`)">
         <ImageItem class="poster" alt="poster" :source="require(`@/assets/${image}`)" />
         <p class="title-group"><span class="title">{{title}}</span>
         <span class="year">{{year}}</span></p>
@@ -11,12 +11,15 @@
 
 <script>
 import ImageItem from '@/components/ImageItem.vue';
-import { mapMutations } from 'vuex';
 
 export default {
   name: 'MovieCard',
   components: { ImageItem },
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     image: {
       type: String,
       required: true,
@@ -44,18 +47,6 @@ export default {
     rating: {
       type: String,
       required: true,
-    },
-  },
-  methods: {
-    ...mapMutations({
-      setIsDescription: 'setIsDescription',
-      setSelectedMovie: 'setSelectedMovie',
-    }),
-    changeIsDescription(selectedMovie) {
-      this.setIsDescription(true);
-      if (selectedMovie) {
-        this.setSelectedMovie(selectedMovie);
-      }
     },
   },
 };

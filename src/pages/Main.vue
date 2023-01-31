@@ -22,7 +22,6 @@
       </div>
     </div>
     <MovieList
-    :changeIsDescription="changeIsDescription"
     :selectedSort="selectedSort"
     :searchQuery="searchQuery"
     :searchBy="searchBy"
@@ -61,9 +60,6 @@ export default defineComponent({
       setSearchQuery: 'setSearchQuery',
       setSelectedSort: 'setSelectedSort',
     }),
-  },
-  props: {
-    changeIsDescription: Function,
   },
 });
 </script>
