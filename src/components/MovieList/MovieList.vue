@@ -2,6 +2,7 @@
     <div class="movies-container" v-if="sortedAndSearchedMovies.length">
         <MovieCard
             v-for="movie in sortedAndSearchedMovies"
+            :id="movie.id"
             :title="movie.title"
             :genre="movie.genre"
             :year="movie.year"

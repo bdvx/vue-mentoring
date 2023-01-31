@@ -1,7 +1,7 @@
 <template lang="">
     <div class="description-wrapper">
         <div class="wrapper">
-            <!--<img class="poster" alt="poster" :src="require(`@/assets/${movie.image}`)" /> -->
+            <img class="poster" alt="poster" :src="require(`@/assets/${movie.image}`)" />
         </div>
         <div class="wrapper">
             <div class="title-wrapper">

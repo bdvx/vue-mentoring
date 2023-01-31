@@ -20,6 +20,7 @@ export default createStore({
         .filter((movie) => movie[state.searchBy.toLowerCase()]
           .toLowerCase().includes(state.searchQuery.toLowerCase()));
     },
+    selectedMovie: (state) => (id) => state.movies.find((m) => +m.id === +id),
   },
   mutations: {
     setMovies(state, movies) {
