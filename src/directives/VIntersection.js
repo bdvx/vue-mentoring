@@ -6,7 +6,6 @@ export default {
     };
     const callback = (entries) => {
       if (entries[0].isIntersecting) {
-        console.log(el, binding);
         binding.value.showImage();
       }
     };

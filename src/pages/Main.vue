@@ -61,6 +61,11 @@ export default defineComponent({
       setSelectedSort: 'setSelectedSort',
     }),
   },
+  mounted() {
+    if (this.$route.query.search) {
+      this.setSearchQuery(this.$route.query.search);
+    }
+  },
 });
 </script>
 

@@ -1,12 +1,11 @@
 <template>
   <div class="container">
-    <span class="netflix-roulette netflix-roulette-top" @click="$router.push('/')">
+    <span class="netflix-roulette netflix-roulette-top" @click="goToHome">
       <span class="netflix">netflix</span>
       <span class="roulette">roulette</span>
       <span
       class="return"
-      v-if="isDescription"
-      @click="$router.push('/')"
+      @click="goToHome"
       >
         <img class="return-image" alt="return" :src="require('@/assets/search.svg')" />
       </span>
@@ -22,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'vuex';
+import { mapMutations } from 'vuex';
 import MainPage from './pages/Main.vue';
 import MovieItem from './pages/MovieItem.vue';
 
@@ -32,10 +31,14 @@ export default defineComponent({
     MainPage,
     MovieItem,
   },
-  computed: {
-    ...mapState([
-      'isDescription',
+  methods: {
+    ...mapMutations([
+      'setSearchQuery',
     ]),
+    goToHome() {
+      this.$router.push('/');
+      this.setSearchQuery('');
+    },
   },
 });
 </script>

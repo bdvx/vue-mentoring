@@ -1,6 +1,4 @@
-import { nextTick } from 'vue';
 import { shallowMount } from '@vue/test-utils';
-import Vuex from 'vuex';
 import MovieCard from './MovieCard.vue';
 
 describe('MovieCard component tests', () => {
@@ -13,22 +11,23 @@ describe('MovieCard component tests', () => {
     description: 'Test Description',
     length: '150',
     rating: '4.5',
+    id: 1,
   };
-  let store; const
-    mutations = {
-      setIsDescription: jest.fn(),
-      setSelectedMovie: jest.fn(),
-    };
-
+  const mockRoute = {
+    params: {
+      id: 1,
+    },
+  };
+  const mockRouter = {
+    push: jest.fn(),
+  };
   beforeAll(() => {
-    store = new Vuex.Store({
-      mutations,
-    });
     wrapper = shallowMount(MovieCard, {
       propsData: params,
       global: {
         mocks: {
-          $store: store,
+          $route: mockRoute,
+          $router: mockRouter,
         },
       },
     });
@@ -38,10 +37,10 @@ describe('MovieCard component tests', () => {
     expect(wrapper.find('.year').text()).toBe(params.year);
     expect(wrapper.find('.genre').text()).toBe(params.genre);
   });
-  it('Should call handler function when clicked', () => {
-    wrapper.find('.movie').trigger('click');
-    nextTick();
-    expect(mutations.setIsDescription).toBeCalled();
-    expect(mutations.setSelectedMovie).toBeCalled();
+  test('Should redirect to the movie page', async () => {
+    await wrapper.find('.movie').trigger('click');
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(mockRouter.push).toHaveBeenCalledWith('/movie/1');
   });
 });

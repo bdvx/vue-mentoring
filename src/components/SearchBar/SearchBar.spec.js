@@ -5,7 +5,6 @@ describe('SearchBar component tests', () => {
   let wrapper;
   it('Should call emit function when button is clicked', () => {
     wrapper = mount(SearchBar);
-    const emitInput = jest.fn();
     wrapper.find('.search').setValue('test');
     wrapper.find('.button').trigger('click');
     expect(wrapper.emitted('update:value')).toBeTruthy();

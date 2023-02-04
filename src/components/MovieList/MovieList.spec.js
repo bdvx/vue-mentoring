@@ -12,6 +12,7 @@ describe('MovieList component tests', () => {
     description: 'Test Description',
     length: '150.5',
     rating: '4.5',
+    id: 1,
   }, {
     image: 'jackie.jpg',
     title: 'TestMovie 2',
@@ -21,9 +22,10 @@ describe('MovieList component tests', () => {
     length: '160.5',
     rating: '4.9',
     'release date': '5.12.2002',
+    id: 2,
   }];
-  const getters = {
-    sortedMovies: () => {},
+  let getters = {
+    sortedMovies: jest.fn(),
     sortedAndSearchedMovies: () => params,
   };
   let store;
@@ -54,8 +56,8 @@ describe('MovieList component tests', () => {
     });
   });
   it('Should show text with no films if none presented', () => {
-    const getters = {
-      sortedMovies: () => {},
+    getters = {
+      sortedMovies: jest.fn(),
       sortedAndSearchedMovies: () => [],
     };
     store = new Vuex.Store({

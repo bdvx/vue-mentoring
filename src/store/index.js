@@ -7,7 +7,6 @@ export default createStore({
     searchQuery: '',
     selectedSort: 'release date',
     searchBy: 'TITLE',
-    isDescription: false,
   },
   getters: {
     sortedMovies(state) {
@@ -34,9 +33,6 @@ export default createStore({
     },
     setSearchBy(state, searchBy) {
       state.searchBy = searchBy;
-    },
-    setIsDescription(state, isDescription) {
-      state.isDescription = isDescription;
     },
 
   },
