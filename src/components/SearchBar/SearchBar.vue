@@ -9,6 +9,12 @@ import MyButton from '../Button/Button.vue';
 export default {
   name: 'SearchBar',
   components: { MyButton },
+  props: {
+    searchQuery: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       value: '',
@@ -20,6 +26,11 @@ export default {
     },
     updateInput(value) {
       this.value = value;
+    },
+  },
+  watch: {
+    searchQuery() {
+      this.updateInput(this.searchQuery);
     },
   },
 };
