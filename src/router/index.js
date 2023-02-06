@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Main from '@/pages/Main.vue';
 import MovieItem from '@/pages/MovieItem.vue';
+import PageNotFound from '@/pages/PageNotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +15,10 @@ const router = createRouter({
       path: '/movie/:id',
       name: 'movie',
       component: MovieItem,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      component: PageNotFound,
     },
   ],
 });
